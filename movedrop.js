@@ -62,7 +62,7 @@ const testProxy = async (proxy) => {
 };
 
 // Function to perform HTTP requests with axios and proxy
-const fetchWithProxy = async (url, options, proxy, retries = 5) => {
+const fetchWithProxy = async (url, options, proxy, retries = 10) => {
   try {
     const { username, password, host, port } = parseProxy(proxy);
     const proxyUrl = `http://${username}:${password}@${host}:${port}`;
@@ -150,7 +150,7 @@ const main = async () => {
 
       try {
         console.log('[INFO] Fetching nonce...');
-        const maxRetries = 5; // Set maximum number of retries
+        const maxRetries = 10; // Set maximum number of retries
         let attempt = 0;
         let nonceResponse = null;
         
