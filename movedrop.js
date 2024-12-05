@@ -258,16 +258,11 @@ const main = async () => {
         
         
         console.log('[INFO] Response from check:', JSON.stringify(checkResponse, null, 2));
-        console.log('[INFO] ========================================================================');
-        console.log('[INFO] ========================================================================');
 
-
-        if (checkResponse && checkResponse.success === 'true') {
-          console.log('[INFO] ========================================================================');
+        if (checkResponse) {
           console.log('[INFO] ========================================================================');
           console.log('[SUCCESS] Successfully processed entry.');
         } else {
-          console.log('[INFO] ========================================================================');
           console.log('[INFO] ========================================================================');
           console.error('[ERROR] Failed to process entry.');
         }
@@ -280,8 +275,7 @@ const main = async () => {
     }
   } catch (error) {
     console.log('[INFO] ========================================================================');
-    console.log('[INFO] ========================================================================');
-    console.error('[ERROR] Error processing files or entries:', error);
+    console.error('[ERROR] Error:', error);
   }
 };
 
